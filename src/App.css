@@ -39,9 +39,21 @@
 
 button {
   font-size: calc(10px + 2vmin);
+
 }
 
 .nav{
   font-size: 20px;
   margin-right: 1rem;
+}
+
+header {
+  margin-top: 2rem;
+  
+}
+header article {
+  align-items: center;
+}
+ul {
+  list-style: none;
 }

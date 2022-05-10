@@ -5,6 +5,7 @@ import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
+import { ItemCount } from './components/ItemCount/ItemCount';
 
 
 
@@ -20,15 +21,18 @@ function App() {
    
       <header >
      
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
+        
+        <ItemCount stock={7} inicio={1}/>
+        
         
       </header>
+
     </div>
   )
 }
 
 export default App
+/* <button type="button" onClick={() => setCount((count) => count + 1)}>
+count is: {count}
+</button>
+*/
