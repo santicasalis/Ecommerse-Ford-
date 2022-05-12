@@ -8,14 +8,14 @@ import { Container,Col,Row} from "react-bootstrap"
 
 
 const vehiculos = [
-  {id:"1", categoria:"pick-up", producto:"Ranger", stock:10, precio:"10000", imagen:"https://forcam.com.ar/pickups/img/ranger/ext/1.png", descripcion:"Nueva Ranger LIMITED  3.2L Cabina Doble 4X4 Diesel AT"},
-  {id:"2", categoria:"pick-up", producto:"Maverick", stock:3, precio:"8000", imagen:"https://forcam.com.ar/pickups/img/maverick/model.png", descripcion:"Nueva Maverick Lariat 2.0 L 4X4 AT"},
-  {id:"3", categoria:"pick-up", producto:"F-150 Raptor", stock:2, precio:"90.000", imagen:"https://forcam.com.ar/autos_tumb/f-150-raptor.webp", descripcion:"Nueva F-150 Raptor 3.5L 4x4 AT"},
-  {id:"4", categoria:"suv", producto:"Bronco",precio:"15.000", stock:8, imagen:"https://forcam.com.ar/pickups/img/bronco/model2.png", descripcion:"Nueva Bronco WildTrack 2.0L 4X4 AT"},
-  {id:"5", categoria:"suv", producto:"Territory",precio:"12.000", stock:1, imagen:"https://forcam.com.ar/pickups/img/territory/model2.png", descripcion:"Nueva Territory 1.5L Turbo AT"},
-  {id:"6", categoria:"electrico", producto:"Kuga",precio:"18.000", stock:3, imagen:"https://forcam.com.ar/autos_tumb/kuga-hibrido.webp", descripcion:"Nueva Kuga Híbrida 2.5L Eléctrico auto-recargable "},
-  {id:"7", categoria:"electrico", producto:"F-150",precio:"85.000", stock:2, imagen:"https://forcam.com.ar/pickups/img/f-150/ext/1.png", descripcion:"Nueva F-150  3.5L V6 Híbrido 4x4 AT "},
-  {id:"8", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://forcam.com.ar/autos/img/mustang/tac/mustang2.png", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
+  {id:"1", categoria:"pick-up", producto:"Ranger", stock:10, precio:"10000", imagen:"https://www.ar.ford.com/manual/img/ranger.jpg", descripcion:"Nueva Ranger LIMITED  3.2L Cabina Doble 4X4 Diesel AT"},
+  {id:"2", categoria:"pick-up", producto:"Maverick", stock:3, precio:"8000", imagen:"https://www.ar.ford.com/manual/img/maverick.jpg", descripcion:"Nueva Maverick Lariat 2.0 L 4X4 AT"},
+  {id:"3", categoria:"pick-up", producto:"F-150 Raptor", stock:2, precio:"90.000", imagen:"https://www.ar.ford.com/manual/img/f-150-raptor.jpg", descripcion:"Nueva F-150 Raptor 3.5L 4x4 AT"},
+  {id:"4", categoria:"suv", producto:"Bronco",precio:"15.000", stock:8, imagen:"https://www.ar.ford.com/manual/img/broncosport.jpg", descripcion:"Nueva Bronco WildTrack 2.0L 4X4 AT"},
+  {id:"5", categoria:"suv", producto:"Territory",precio:"12.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/territory.jpg", descripcion:"Nueva Territory 1.5L Turbo AT"},
+  {id:"6", categoria:"electrico", producto:"Kuga",precio:"18.000", stock:3, imagen:"https://www.ar.ford.com/manual/img/nueva-kuga.jpg", descripcion:"Nueva Kuga Híbrida 2.5L Eléctrico auto-recargable "},
+  {id:"7", categoria:"electrico", producto:"F-150",precio:"85.000", stock:2, imagen:"https://www.ar.ford.com/manual/img/f-150.jpg", descripcion:"Nueva F-150  3.5L V6 Híbrido 4x4 AT "},
+  {id:"8", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
 
 ]
 
@@ -49,7 +49,7 @@ getFetch
   
   <Container>
     <Row className="justify-content-center">
-    <Col xs lg="5" >
+    <Col  lg="4" >
   <Card className="mt-4" border="primary" >
 
   <Card.Img variant="top" src={vehiculo.imagen} />
