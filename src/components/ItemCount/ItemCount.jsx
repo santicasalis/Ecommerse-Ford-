@@ -11,10 +11,10 @@ export const ItemCount = ({stock, inicio, onAdd}) => {
           setCuantity(cuantity - 1 )
       }
     }
-
+ 
     const suma =() =>{
         if (cuantity < stock){
-            setCuantity(cuantity + 1)
+           setCuantity(cuantity + 1) 
         }
     }
     const onClick = () => { onAdd  }

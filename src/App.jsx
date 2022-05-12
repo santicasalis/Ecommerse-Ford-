@@ -6,6 +6,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
 import { ItemCount } from './components/ItemCount/ItemCount';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 
 
@@ -22,10 +23,11 @@ function App() {
       <header >
      
         
-        <ItemCount stock={7} inicio={1}/>
+       
         
-        
+       
       </header>
+       <ItemListContainer/>
 
     </div>
   )
