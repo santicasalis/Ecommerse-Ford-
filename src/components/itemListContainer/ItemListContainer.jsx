@@ -50,9 +50,9 @@ getFetch
   <Container>
     <Row  >
     <Col  lg="4" >
-  <Card className="mt-4 w-70" border="primary" >
+  <Card className="mt-4 " border="primary" >
 
-  <Card.Img variant="top"  src={vehiculo.imagen} />
+  <Card.Img  variant="top"  src={vehiculo.imagen} />
      <Card.Body>
            <Card.Subtitle className="mb-2 text-muted">
       {vehiculo.descripcion}

@@ -1,25 +1,35 @@
-import React from 'react'
+import { Card } from "react-bootstrap"
+import { ListGroup } from "react-bootstrap"
+import { ListGroupItem } from "react-bootstrap"
+import { Button} from "react-bootstrap"
+import { Container,Col,Row} from "react-bootstrap"
 
-export const Item = () => {
+export const Item = ({id , categoria, imagen, precio  } )   => {
   return (
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={'${vehiculos.imagen}'} />
-  <Card.Body>
-    <Card.Title>{'${vehiculos.producto}'}</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-  </Card.Body>
-  <ListGroup className="list-group-flush">
-    <ListGroupItem>Cras justo odio</ListGroupItem>
-    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem>Vestibulum at eros</ListGroupItem>
-  </ListGroup>
-  <Card.Body>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
+    <Container>
+    <Row  >
+    <Col  lg="4" >
+  <Card className="mt-4 " border="primary" >
+
+  <Card.Img  variant="top"  src={vehiculo.imagen} />
+     <Card.Body>
+           <Card.Subtitle className="mb-2 text-muted">
+      {vehiculo.descripcion}
+         </Card.Subtitle>
+    </Card.Body>
+     <ListGroup className="list-group-flush">
+        <ListGroupItem>Precio:US${vehiculo.precio}</ListGroupItem>
+
+     </ListGroup>
+    <Card.Body>
+    
+       <Button className="btn-sm" variant="primary" active>Comprar</Button>{' '}
+       <Button className="btn-sm" variant="primary" active>Detalles</Button>
+ 
+    </Card.Body>
 </Card>
+</Col>
+</Row>
+</Container>
   )
 }
