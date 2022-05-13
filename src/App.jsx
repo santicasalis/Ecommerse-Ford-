@@ -18,19 +18,17 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar/>
-      
-   
-      <header >
-     
-        
-       
-        
-       
-      </header>
-       <ItemListContainer/>
+    <header >
+     <NavBar/>
+    </header>
+    
+  <main>
+  <section> 
+  <ItemListContainer/>
+  </section>
 
-
+  </main>
+  
       <Footer/>
     </div>
   )

@@ -2,14 +2,12 @@ import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
 import { Button} from "react-bootstrap"
-import { Container,Col,Row} from "react-bootstrap"
 
-export const Item = ({id , categoria, imagen, precio  } )   => {
+
+export const Item = ({vehiculo } )   => {
   return (
-    <Container>
-    <Row  >
-    <Col  lg="4" >
-  <Card className="mt-4 " border="primary" >
+   <div className='col-md-3'>
+  <Card className="mt-2" border="primary" >
 
   <Card.Img  variant="top"  src={vehiculo.imagen} />
      <Card.Body>
@@ -28,8 +26,6 @@ export const Item = ({id , categoria, imagen, precio  } )   => {
  
     </Card.Body>
 </Card>
-</Col>
-</Row>
-</Container>
+</div> 
   )
 }

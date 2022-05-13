@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
    
   
-    <Navbar bg="primary" fixed="top" sticky="top" variant="dark">
+    <Navbar  bg="primary" fixed="top" sticky="top" variant="dark">
       <Container>
       <Navbar.Brand href="#">  
       <img
