@@ -1,8 +1,8 @@
 
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { Detalle } from '../ItemDetail/Detalle'
 
-const vehiculo = {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
+const vehiculo = {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/mustang/mustang-2021/colorizer/negro-ebony/far-mustang-negro-ebony-.jpg.dam.full.high.jpg/1622062692550.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
 
 const getFetch = new Promise((resolve)=>{
     setTimeout(() => {
@@ -11,9 +11,6 @@ const getFetch = new Promise((resolve)=>{
     
     })
     
-
-
-
 const DetalleContainer = () => {
     const [vehiculo, setVehiculo] = useState({})
     

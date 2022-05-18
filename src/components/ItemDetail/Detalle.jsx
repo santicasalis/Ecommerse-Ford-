@@ -1,11 +1,11 @@
 import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
-import { Button} from "react-bootstrap"
 
 
-export const Detalle = ( )   => {
-    const vehiculo = {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/mustang/mustang-2021/colorizer/negro-ebony/far-mustang-negro-ebony-.jpg.dam.full.high.jpg/1622062692550.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
+
+export const Detalle = ({vehiculo} )   => {
+   
   return (
    <div className='col-md-3'>
       
