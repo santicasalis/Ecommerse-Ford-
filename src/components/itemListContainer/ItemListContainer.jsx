@@ -20,13 +20,13 @@ const vehiculos = [
 
 
 
-
 const getFetch = new Promise((resolve)=>{
-setTimeout(() => {
-  resolve (vehiculos)
-}, 2000)
-
-})
+  setTimeout(() => {
+    resolve (vehiculos)
+  }, 2000)
+  
+  })
+  
 
 
 export const ItemListContainer = () => {

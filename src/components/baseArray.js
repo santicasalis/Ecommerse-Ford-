@@ -15,12 +15,23 @@ const vehiculos = [
     {id:"12", categoria:"autos", producto:"Mondeo",precio:"45.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mondeo.jpg", descripcion:"Mondeo 2.0L Ecoboost  AT "}
   
   ]
-export const getProd = (id) => {
+export const getFetch = (id) => {
     return new Promise((resolve)=>{
         setTimeout(()=>{
-                const filtro = id ? vehiculos.find(vehiculo => vehiculo.id === id ) : vehiculos                                 
-                resolve( filtro )                           
+                const query = id ? vehiculos.find(vehiculo => vehiculo.id === id ) : vehiculos                                 
+                resolve( query )                           
             }, 2000)
         })            
     
+}
+
+const vehiculo = {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
+
+export const getFetchOne =()=> {
+    return new Promise ((resolve)=>{
+        setTimeout(()=>{
+                                             
+            resolve( vehiculo)                           
+        }, 2000)
+    })
 }

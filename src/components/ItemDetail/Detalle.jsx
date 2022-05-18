@@ -4,7 +4,8 @@ import { ListGroupItem } from "react-bootstrap"
 import { Button} from "react-bootstrap"
 
 
-export const Item = ({vehiculo } )   => {
+export const Detalle = ( )   => {
+    const vehiculo = {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT "}
   return (
    <div className='col-md-3'>
       
@@ -18,14 +19,10 @@ export const Item = ({vehiculo } )   => {
     </Card.Body>
      <ListGroup className="list-group-flush">
         <ListGroupItem>Precio:US${vehiculo.precio}</ListGroupItem>
+        <ListGroupItem>Stock disponible:{vehiculo.stock}</ListGroupItem>
 
      </ListGroup>
-    <Card.Body>
-    
-       <Button className="btn-sm" variant="primary" active>Comprar</Button>{' '}
-       <a href="DetalleContainer"><Button className="btn-sm" variant="primary" active>Detalles</Button> </a>
- 
-    </Card.Body>
+   
 </Card>
 </div> 
   )
