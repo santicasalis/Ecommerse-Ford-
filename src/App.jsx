@@ -29,7 +29,9 @@ function App() {
   <ItemListContainer/>
   </section>
 
-<Detalle/>
+<DetalleContainer/>
+
+
 
   
 
