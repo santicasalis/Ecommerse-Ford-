@@ -3,33 +3,29 @@ import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
 import { Button} from "react-bootstrap"
 import { Link } from "react-router-dom"
-
+import "./item.css"
 
 export const Item = ({vehiculo } )   => {
   return (
-      
-   <div className='col-md-3'>
+    
+   <div className='col-md-3 itemVehiculo'key={vehiculo.id} >
    
   <Card className="mt-2" border="primary" >
-   key={vehiculo.id}  
-<Link to={`/detalle/${vehiculo.id}`}>
+     
+<Link className="decoracion" to={`/detalle/${vehiculo.id}`}>
   <Card.Img  variant="top"  src={vehiculo.imagen} />
      <Card.Body>
            <Card.Subtitle className="mb-2 text-muted"> 
       {vehiculo.descripcion}
          </Card.Subtitle>
     </Card.Body>
-     <ListGroup className="list-group-flush">
-        <ListGroupItem>Precio:US${vehiculo.precio}</ListGroupItem>
+     <ListGroup className="list-group-flush ">
+        <ListGroupItem >Precio:US${vehiculo.precio}</ListGroupItem>
 
      </ListGroup>
-    <Card.Body>
+     </Link>
+  
     
-       <Button className="btn-sm" variant="primary" active>Comprar</Button>{' '}
-       <a href="DetalleContainer"><Button className="btn-sm" variant="primary" active>Detalles</Button> </a>
- 
-    </Card.Body>
-    </Link>
 </Card>
  
 </div> 

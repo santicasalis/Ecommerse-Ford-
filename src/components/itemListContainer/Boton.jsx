@@ -3,7 +3,7 @@
 const Boton = ({comprar}) => {
   return (
     <div>
-      <button onClick={comprar}>Compra</button>  
+      <button onClick={comprar}>Comprar</button>  
 
     </div>
   )

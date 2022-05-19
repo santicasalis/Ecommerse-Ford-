@@ -1,29 +1,30 @@
 import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
+import Boton from "../itemListContainer/Boton"
 
 
 
-export const Detalle = ({vehiculo} )   => {
+export const ItemDetail = ({vehiculo} )   => {
    
   return (
-   <div className='col-md-3'>
+   <div className='col-md-12'>
       
-  <Card className="mt-2" border="primary" >
 
-  <Card.Img  variant="top"  src={vehiculo.imagen} />
-     <Card.Body>
+
+  <img  src={vehiculo.imagen} />
+    
            <Card.Subtitle className="mb-2 text-muted">
       {vehiculo.descripcion}
          </Card.Subtitle>
-    </Card.Body>
+    
      <ListGroup className="list-group-flush">
         <ListGroupItem>Precio:US${vehiculo.precio}</ListGroupItem>
         <ListGroupItem>Stock disponible:{vehiculo.stock}</ListGroupItem>
 
      </ListGroup>
-   
-</Card>
+   <Boton/>
+
 </div> 
   )
 }
