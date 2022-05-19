@@ -18,32 +18,29 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
-    <div className="App">
-    <header >
-     <NavBar/>
-    </header>
-    
-  <main>
-  <section> 
-  <ItemListContainer/>
-  </section>
+  <BrowserRouter>
+    <div className='App'>
 
-<DetalleContainer/>
+        <header >
+           <NavBar/>
+        </header>
+      <Routes>
+       <Route  path="/"  element={<ItemListContainer/>}   />
+       <Route  path="/detalle/:detalleId"  element={ <DetalleContainer/>}   />
+       
 
-
-
-  
-
-
-  </main>
+        
   
   
-  <footer>
-      <Footer/>
-  </footer>
+       <Route  path="/*"  element={ <Navigate to= '/' />}   /> 
+
+       </Routes>
+       <footer>
+          <Footer/>
+        </footer>
     </div>
-    </BrowserRouter>
+  </BrowserRouter>
+  
   )
 }
 

@@ -1,6 +1,7 @@
 import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget";
 import "./navBar.css"
 
@@ -11,15 +12,11 @@ const NavBar = () => {
   
     <Navbar  bg="primary" fixed="top" variant="dark">
       <Container>
-      <Navbar.Brand href="#">  
-      <img
-          alt=""
-          src="https://www.ar.ford.com/manual/img/logo.png"
-          width=""
-          height=""
-          className="d-inline-block align-top"
-        />
-      </Navbar.Brand>
+       <Link to='/'>
+       
+      <img className="d-inline-block align-top" src="https://www.ar.ford.com/manual/img/logo.png"></img>
+
+       </Link>
       <Nav className="ml-auto">
         <Nav.Link className="text-white nav h5"  href="#Autos">Autos</Nav.Link>
         <Nav.Link className="text-white nav h5" href="#Suv">Suv</Nav.Link>
