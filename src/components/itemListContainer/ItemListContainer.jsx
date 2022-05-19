@@ -12,7 +12,7 @@ import "./itemListContainer.css"
     useEffect(() => {
         if (id) {
             getFetch()  
-            .then(vehiculo=> setVehiculos(vehiculo.filter((prods) => prods.categoria === id)))
+            .then(vehiculos=> setVehiculos(vehiculos.filter((vehiculo) => vehiculo.categoria === id)))
             .catch((err)=> console.log(err))
            
                                       
