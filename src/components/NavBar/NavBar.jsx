@@ -8,10 +8,10 @@ import "./navBar.css"
 
 
 const categorias = [
-  {idCategoria: '1', name: 'autos', nameButton: 'Autos'},
-  {idCategoria: '2', name: 'suv', nameButton: 'Suvs'},
-  {idCategoria: '3', name: 'pick-up', nameButton: 'Pick-Ups'},
-  {idCategoria: '3', name: 'electrico', nameButton: 'Electricos'},
+  {id: '1', ruta: 'autos', boton: 'Autos'},
+  {ida: '2', ruta: 'suv', boton: 'Suvs'},
+  {id: '3', ruta: 'pick-up', boton: 'Pick-Ups'},
+  {id: '3', ruta: 'electrico', boton: 'Electricos'},
 ]
 
 
@@ -23,13 +23,13 @@ const NavBar = () => {
     <Navbar   bg="primary" fixed="top" variant="dark">
       <Container>
        <Link to='/'>
-           <img className="d-inline-block align-top" src="https://www.ar.ford.com/manual/img/logo.png"></img>
+           <img className="logo d-inline-block align-top" src="https://www.ar.ford.com/manual/img/logo.png"></img>
        </Link>
       
       <Nav  className="ml-auto">
         
  
-        {categorias.map(param => <NavLink className="filtros" key={param.id} to={`/categoria/${param.name}`}>{param.nameButton}</NavLink>) }
+        {categorias.map(vehiculo => <NavLink className="filtros" key={vehiculo.id} to={`/categoria/${vehiculo.ruta}`}>{vehiculo.boton}</NavLink>) }
       </Nav>
     
        
