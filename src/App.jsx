@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/Container/ItemDetailContainer';
 import { Card } from './components/Card/Card';
+import { InputCount } from './components/InputCount/InputCount';
+
 
 
 
@@ -25,7 +27,9 @@ function App() {
         <header >
            <NavBar/>
         </header>
+       
       <main>
+   
       <Routes>
        <Route  path="/"  element={<ItemListContainer/>}   />
        <Route path="/categoria/:id" element={<ItemListContainer/>}/>

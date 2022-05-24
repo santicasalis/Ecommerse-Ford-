@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react'
+import "./itemCount.css"
 
 
-export const ItemCount = ({stock, inicio, onAdd}) => {
+export const ItemCount = ({stock, inicio}) => {
 
     const [cuantity, setCuantity] = useState(inicio)
     const resta=()=> {
-      // cuantity>1? setCuantity(cuantity - 1) }
+     
       if(cuantity >1){
           setCuantity(cuantity - 1 )
       }
@@ -17,17 +18,22 @@ export const ItemCount = ({stock, inicio, onAdd}) => {
            setCuantity(cuantity + 1) 
         }
     }
-    const onClick = () => { onAdd  }
+    const onClick = () => { console.log(cuantity); }
   return (
-<section className='carrito' >
-      <ul >
-        <li><button type='button' onClick={resta}>-</button></li>
-        <li>{cuantity}</li>
-        <li><button type='button' onClick={suma}>+</button></li>
-      </ul>
-      <button  type='submit' value={cuantity} onClick = { onClick }>
-        Añadir al carrito
-      </button>
-    </section>
+<div className='col-md-6 divs' >
+      
+        <div >
+        <button className="btn btn-primary botones" type='button' onClick={resta}>-</button>
+        <h5 className='botones'>{cuantity}</h5> 
+        <button className="btn btn-primary botones" type='button' onClick={suma}>+</button>
+        </div>
+        
+      <br/>
+      
+     {// <button className="btn btn-primary"  type='submit' value={cuantity} onClick = { onClick }>
+      //  Añadir al carrito
+     // </button> 
+    }
+    </div>
   )
   }

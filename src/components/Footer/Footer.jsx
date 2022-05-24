@@ -6,7 +6,7 @@ import "./footer.css"
 export const Footer = () => {
   return (
 
-  <div class="bg-primary " >
+  <div className="bg-primary " >
    <div>
    <Icon className='iconos' icon="entypo-social:instagram-with-circle"color="white" height="50" />
    <Icon className='iconos' icon="entypo-social:linkedin-with-circle" color="white" height="50" />

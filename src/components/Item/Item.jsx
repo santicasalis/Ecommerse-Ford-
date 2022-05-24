@@ -9,7 +9,7 @@ export const Item = ({vehiculo } )   => {
     
    <div className='col-md-3 itemVehiculo'key={vehiculo.id} >
    
-  <Card className="mt-2" border="primary" >
+  <Card className="mt-2 carta" border="primary" >
      
 <Link className="decoracion" to={`/detalle/${vehiculo.id}`}>
   <Card.Img  variant="top"  src={vehiculo.imagen} />

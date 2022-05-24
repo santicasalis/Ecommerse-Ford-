@@ -1,5 +1,7 @@
-article {
-    margin-top: 2 rem;
-    height: auto;
-    background-color: aqua;
+.botones{
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  font-size:large;
 }
+

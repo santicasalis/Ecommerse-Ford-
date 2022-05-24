@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom'
 import ItemList from "../ItemList/ItemList"
 import { getFetch } from "../../array/getFetch"
 import "./itemListContainer.css"
- export const ItemListContainer = (  ) => {      
+ 
+
+export const ItemListContainer = (  ) => {      
     const [vehiculos, setVehiculos] = useState([])
     
 
@@ -23,9 +25,8 @@ import "./itemListContainer.css"
            
                             
         }
-    }, [id])
+                  }, [id])
 
-  console.log(id);
     return (
         <div>
            
