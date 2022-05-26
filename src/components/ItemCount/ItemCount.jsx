@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react'
+import { useCartContext } from '../../context/CartContex'
 import "./itemCount.css"
 
 
-export const ItemCount = ({stock, inicio}) => {
+export const ItemCount = ({stock, inicio, vehiculos}) => {
 
     const [cuantity, setCuantity] = useState(inicio)
     const resta=()=> {
@@ -18,7 +19,18 @@ export const ItemCount = ({stock, inicio}) => {
            setCuantity(cuantity + 1) 
         }
     }
-    const onClick = () => { console.log(cuantity); }
+    
+  const {addToCart, cartList} = useCartContext()
+  
+  
+  const onAdd = (cant) => {
+    console.log(cant)
+    addToCart( { ...vehiculos, cantidad: cant } )
+  }
+  
+
+   
+   
   return (
 <div className='col-md-6 divs' >
       
@@ -30,10 +42,10 @@ export const ItemCount = ({stock, inicio}) => {
         
       <br/>
       
-     {// <button className="btn btn-primary"  type='submit' value={cuantity} onClick = { onClick }>
-      //  Añadir al carrito
-     // </button> 
-    }
+      <button className="btn btn-primary"  type='submit' value={cuantity} onClick = {()=>onAdd(cuantity)  }>
+       Añadir al carrito
+      </button> 
+    
     </div>
   )
   }

@@ -1,23 +1,20 @@
+import { useContext } from "react"
 import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
-import Boton from "../itemListContainer/Boton"
+import { useCartContext } from "../../context/CartContex"
+
 import "./itemDetail.css"
 
-
-const ultimoDisponible=()=>{
-  if ({cuantity}==="1" ) {
-    return ("Última unidad Disponible")
-  }else{
-    return {cuantity}
-  }
-}
 
 
 
 export const ItemDetail = ({vehiculo} )   => {
    
+const {addToCart, cartList,} = useCartContext()
 
+
+console.log(cartList);
 
   return (
   

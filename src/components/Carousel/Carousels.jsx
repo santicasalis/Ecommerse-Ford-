@@ -1,16 +1,18 @@
 import { Carousel} from "react-bootstrap"
+import "./carousels.css"
 
 
 
 
-export const Carousel = () => {
+export const Carousels = () => {
   return (
-      <div>
-    <Carousel>
+      <div  className="carro col-md-8">
+    <Carousel >
   <Carousel.Item interval={1000}>
     <img
-      className="d-block w-100"
-      src="https://www.ford.com.ar/content/ford/ar/es_ar/home/jcr:content/par/image/image.imgs.full.high.jpg/1642609919307.jpg"
+      className="d-block "
+      width = "90%"
+      src="https://forcam.com.ar/pickups/img/f-150-raptor/gal8.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -20,7 +22,8 @@ export const Carousel = () => {
   </Carousel.Item>
   <Carousel.Item interval={500}>
     <img
-      className="d-block w-100"
+      className="d-block"
+      width = "90%"
       src="https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/bronco-sport/prelaunch/gallery-trigger/overlay/far-bronco-sport-trigger-over-01.jpg"
       alt="Second slide"
     />
@@ -31,8 +34,10 @@ export const Carousel = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="https://www.ford.com.ar/content/ford/ar/es_ar/home/crossovers-suvs-4x4/nueva-ranger-raptor/galeria/jcr:content/par/gallerycategory/generalParsys,%20decorationTagName=%27div%27/image_1628124597/image.imgs.full.high.jpg/1613054235436.jpg"
+      className="d-block "
+      width = "90%"
+      
+      src="https://forcam.com.ar/autos/img/mustang/gal3.jpg"
       alt="Third slide"
     />
     <Carousel.Caption>

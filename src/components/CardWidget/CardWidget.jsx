@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CardWidget=()=>{
 return(
-<Link to='/Card'>
+<Link to='/cart'>
 <Icon icon="icons8:buy" color="white" height="40" />
 </Link>
 

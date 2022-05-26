@@ -9,8 +9,10 @@ import { Footer } from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/Container/ItemDetailContainer';
-import { Card } from './components/Card/Card';
-import { InputCount } from './components/InputCount/InputCount';
+import { Cart } from './components/Cart/Cart';
+import { Carousels } from './components/Carousel/Carousels';
+import { CartContextProvider } from './context/CartContex';
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
 
   return (
   <BrowserRouter>
+  <CartContextProvider>
     <div className='App'>
 
         <header >
@@ -29,12 +32,13 @@ function App() {
         </header>
        
       <main>
-   
+    
       <Routes>
+        
        <Route  path="/"  element={<ItemListContainer/>}   />
        <Route path="/categoria/:id" element={<ItemListContainer/>}/>
        <Route  path="/detalle/:detalleId"  element={ <ItemDetailContainer/>}   />
-       <Route  path="/card" element={ <Card/>} />
+       <Route  path="/cart" element={ <Cart/>} />
 
         
   
@@ -47,6 +51,7 @@ function App() {
           <Footer/>
         </footer>
     </div>
+    </CartContextProvider>
   </BrowserRouter>
   
   )
