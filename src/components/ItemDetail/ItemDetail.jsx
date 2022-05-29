@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
 import { useCartContext } from "../../context/CartContex"
+import { ItemCount } from "../ItemCount/ItemCount"
 
 import "./itemDetail.css"
 
@@ -11,10 +12,17 @@ import "./itemDetail.css"
 
 export const ItemDetail = ({vehiculo} )   => {
    
-const {addToCart, cartList,} = useCartContext()
 
+  const {addToCart, cartList} = useCartContext()
+  
+  
+  const onAdd = (cant) => {
+    console.log(cant)
+    addToCart( { ...vehiculo, cantidad: cant } )
+  }
 
-console.log(cartList);
+  console.log(cartList)
+
 
   return (
   
@@ -35,8 +43,8 @@ console.log(cartList);
      </ListGroup>
   
    
-   <div className='col-md-2ta'> 
-
+   <div className='col-md-12'> 
+   <ItemCount inicio={1} stock={vehiculo.stock} onAdd={onAdd} />
 
    </div>
 </div> 

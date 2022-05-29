@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getFetch } from '../../array/getFetch'
 import { ItemCount } from '../ItemCount/ItemCount'
 import {  ItemDetail } from '../ItemDetail/ItemDetail'
+
 import { OpcionesButton } from '../OpcionesButton/OpcionesButton'
 import "./itemDetailContainer.css"
 
@@ -22,8 +23,10 @@ export const ItemDetailContainer = () => {
     return (
         <div >
             <ItemDetail vehiculo={vehiculo}  />
-            <ItemCount inicio={1} stock={vehiculo.stock}  />
+         { //  <ItemCount inicio={1} stock={vehiculo.stock} onAdd={onAdd} />
+         }
             <OpcionesButton />
+           
         </div>
     )
 }

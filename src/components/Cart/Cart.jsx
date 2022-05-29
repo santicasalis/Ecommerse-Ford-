@@ -1,16 +1,14 @@
 import { useCartContext } from "../../context/CartContex"
 
+const Cart = () => {
+  const { cartList, vaciarCarrito} = useCartContext()
 
-export const Cart = (vehiculo) => {
-  const {cartList}=useCartContext()
   return (
     <div>
-      <h1>Cart</h1>
-      {cartList.map(vehiculo=> <li>{vehiculo.producto}- precio: {vehiculo.precio}</li>)
-
-      }
-
-
+      {cartList.map(vehiculo => <li> <img src={vehiculo.imagen}  alt="" />{vehiculo.producto} - price: {vehiculo.precio} - cantidad: {vehiculo.cantidad}</li> )}
+     <button className="btn btn-primary" onClick={vaciarCarrito}> Vaciar carrito</button>
     </div>
   )
 }
+
+export default Cart

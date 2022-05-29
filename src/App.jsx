@@ -19,11 +19,13 @@ import { CartContextProvider } from './context/CartContex';
 
 
 
+
 function App() {
   
 
   return (
   <BrowserRouter>
+  
   <CartContextProvider>
     <div className='App'>
 
@@ -52,6 +54,7 @@ function App() {
         </footer>
     </div>
     </CartContextProvider>
+  
   </BrowserRouter>
   
   )

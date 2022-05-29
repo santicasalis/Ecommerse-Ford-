@@ -1,10 +1,11 @@
 
+import { loadIcons } from '@iconify/react'
 import React, { useState } from 'react'
 import { useCartContext } from '../../context/CartContex'
 import "./itemCount.css"
 
 
-export const ItemCount = ({stock, inicio, vehiculos}) => {
+export const ItemCount = ({stock, inicio, onAdd}) => {
 
     const [cuantity, setCuantity] = useState(inicio)
     const resta=()=> {
@@ -19,17 +20,7 @@ export const ItemCount = ({stock, inicio, vehiculos}) => {
            setCuantity(cuantity + 1) 
         }
     }
-    
-  const {addToCart, cartList} = useCartContext()
-  
-  
-  const onAdd = (cant) => {
-    console.log(cant)
-    addToCart( { ...vehiculos, cantidad: cant } )
-  }
-  
 
-   
    
   return (
 <div className='col-md-6 divs' >
