@@ -7,7 +7,7 @@ export const Cart = () => {
 
   return (
     <div className="col-md-8">
-      <Table striped bordered hover>
+      <Table  responsive bordered hover>
   <thead>
     <tr>
       <th>Producto</th>
@@ -21,7 +21,7 @@ export const Cart = () => {
        
       <tr>
       <td ><img src={vehiculo.imagenCart}className="imagen"></img> {vehiculo.producto} </td>
-      <td>{vehiculo.cantidad}</td>
+      <td className="texto">{vehiculo.cantidad}</td>
       <td>{vehiculo.precio}</td>
       <td>  X   </td>
     </tr>

@@ -10,9 +10,8 @@ const vehiculos = [
     {id:"7", categoria:"electrico", producto:"F-150",precio:"85.000", stock:2, imagen:"https://www.ar.ford.com/manual/img/f-150.jpg", descripcion:"Nueva F-150  3.5L V6 Híbrido 4x4 AT ",imagenCart:"https://forcam.com.ar/autos_tumb/f-150.webp"},
     {id:"8", categoria:"electrico", producto:"Mondeo",precio:"70.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mondeohibrido.jpg ", descripcion:"Nuevo Mondeo Hìbrido ",imagenCart:"https://forcam.com.ar/autos_tumb/mondeo-vignale.webp"},
     {id:"9", categoria:"pick-up", producto:"Ranger Raptor",precio:"40.000", stock:7, imagen:"https://www.ar.ford.com/manual/img/rangerraptor.jpg", descripcion:"Nueva Ranger Raptor 2.0L Bi Turbo ",imagenCart:"https://forcam.com.ar/autos_tumb/raptor.webp"},
-    {id:"10", categoria:"suv", producto:"Ecosport",precio:"6.000", stock:10, imagen:"https://www.ar.ford.com/manual/img/ecosport.jpg", descripcion:"Ecosport 1.5L Dragon 4X2 ",imagenCart:"https://smilenet.euwest01.umbraco.io/media/14612/ecosport-titanium.jpg"},
-    {id:"11", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT ",imagenCart:"https://forcam.com.ar/autos_tumb/mustangmatch1.webp"},
-    {id:"12", categoria:"autos", producto:"Mondeo",precio:"45.000", stock:5, imagen:"https://www.ar.ford.com/manual/img/mondeo.jpg", descripcion:"Mondeo 2.0L Ecoboost  AT ",imagenCart:"https://forcam.com.ar/autos_tumb/mondeo-vignale.webp"}
+    {id:"10", categoria:"autos", producto:"Mustang",precio:"80.000", stock:1, imagen:"https://www.ar.ford.com/manual/img/mustang.jpg", descripcion:"Nuevo Mustang Match V8 5.0L  AT ",imagenCart:"https://forcam.com.ar/autos_tumb/mustangmatch1.webp"},
+    {id:"11", categoria:"autos", producto:"Mondeo",precio:"45.000", stock:5, imagen:"https://www.ar.ford.com/manual/img/mondeo.jpg", descripcion:"Mondeo 2.0L Ecoboost  AT ",imagenCart:"https://forcam.com.ar/autos_tumb/mondeo-vignale.webp"}
   
   ]
 export const getFetch = (id) => {
