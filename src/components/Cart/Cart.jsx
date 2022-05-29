@@ -1,14 +1,37 @@
+import { Table } from "react-bootstrap"
 import { useCartContext } from "../../context/CartContex"
+import "./cart.css"
 
-const Cart = () => {
+export const Cart = () => {
   const { cartList, vaciarCarrito} = useCartContext()
 
   return (
-    <div>
-      {cartList.map(vehiculo => <li> <img src={vehiculo.imagen}  alt="" />{vehiculo.producto} - price: {vehiculo.precio} - cantidad: {vehiculo.cantidad}</li> )}
-     <button className="btn btn-primary" onClick={vaciarCarrito}> Vaciar carrito</button>
-    </div>
+    <div className="col-md-8">
+      <Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>X</th>
+    </tr>
+  </thead>
+  <tbody>
+      {cartList.map(vehiculo => 
+       
+      <tr>
+      <td ><img src={vehiculo.imagenCart}className="imagen"></img> {vehiculo.producto} </td>
+      <td>{vehiculo.cantidad}</td>
+      <td>{vehiculo.precio}</td>
+      <td>  X   </td>
+    </tr>
+    )}
+    
+    </tbody>
+</Table>
+<button className="btn btn-primary" onClick={vaciarCarrito}> Vaciar carrito</button>
+</div>
   )
 }
 
-export default Cart
+

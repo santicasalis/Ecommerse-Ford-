@@ -9,7 +9,7 @@ import { Footer } from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/Container/ItemDetailContainer';
-import { Cart } from './components/Cart/Cart';
+import {Cart} from './components/Cart/Cart'
 import { Carousels } from './components/Carousel/Carousels';
 import { CartContextProvider } from './context/CartContex';
 

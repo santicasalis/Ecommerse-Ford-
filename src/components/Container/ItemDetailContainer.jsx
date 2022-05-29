@@ -25,7 +25,7 @@ export const ItemDetailContainer = () => {
             <ItemDetail vehiculo={vehiculo}  />
          { //  <ItemCount inicio={1} stock={vehiculo.stock} onAdd={onAdd} />
          }
-            <OpcionesButton />
+            
            
         </div>
     )

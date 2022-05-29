@@ -2,6 +2,7 @@
 import { loadIcons } from '@iconify/react'
 import React, { useState } from 'react'
 import { useCartContext } from '../../context/CartContex'
+import { OpcionesButton } from '../OpcionesButton/OpcionesButton'
 import "./itemCount.css"
 
 

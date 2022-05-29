@@ -17,11 +17,10 @@ export const ItemDetail = ({vehiculo} )   => {
   
   
   const onAdd = (cant) => {
-    console.log(cant)
+   
     addToCart( { ...vehiculo, cantidad: cant } )
   }
 
-  console.log(cartList)
 
 
   return (
