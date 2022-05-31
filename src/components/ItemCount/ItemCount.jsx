@@ -1,7 +1,9 @@
 
 import { loadIcons } from '@iconify/react'
 import React, { useState } from 'react'
+import { Link} from 'react-router-dom'
 import { useCartContext } from '../../context/CartContex'
+import { InputCount } from '../InputCount/InputCount'
 import { OpcionesButton } from '../OpcionesButton/OpcionesButton'
 import "./itemCount.css"
 
@@ -33,11 +35,15 @@ export const ItemCount = ({stock, inicio, onAdd}) => {
         </div>
         
       <br/>
-      
-      <button className="btn btn-primary"  type='submit' value={cuantity} onClick = {()=>onAdd(cuantity)  }>
-       Añadir al carrito
-      </button> 
+
+    <Link to='/cart'> 
     
+      <button className="btn btn-primary"  type='submit' value={cuantity} onClick = {()=>onAdd(cuantity) }>
+       Añadir al carrito
+       </button> 
+   </Link> 
+    
+   
     </div>
   )
   }

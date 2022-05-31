@@ -3,11 +3,8 @@ import { Link } from "react-router-dom"
 import "./inputCount.css"
 
 
-export const InputCount= ({cuantity})=> {
-const prueba =()=>{
-    console.log(cuantity);
-}
-    
+export const InputCount= ()=> {
+ 
     return (
         <>
         <Link to='/card' >

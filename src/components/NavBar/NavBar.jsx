@@ -2,9 +2,10 @@ import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import { useCartContext } from "../../context/CartContex";
 import CardWidget from "../CardWidget/CardWidget";
-
 import "./navBar.css"
+
 
 
 const categorias = [
@@ -17,6 +18,8 @@ const categorias = [
 
 
 const NavBar = () => {
+  const {cantidadTotal} = useCartContext()
+
   return (
    
     <Navbar collapseOnSelect expand="lg"   bg="primary" fixed="top" variant="dark">
@@ -29,9 +32,10 @@ const NavBar = () => {
         
         {categorias.map(vehiculo => <NavLink className="filtros" key={vehiculo.id} to={`/categoria/${vehiculo.ruta}`}>{vehiculo.boton}</NavLink>) }
       </Nav>
-     
-       
+      <div>
+      {cantidadTotal() !== 0 && cantidadTotal() } 
       <CardWidget/>
+      </div>
       </Container>
     </Navbar>
   

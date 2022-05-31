@@ -1,5 +1,5 @@
 
-export const Count= ({onAdd,cuantity })=> {
+export const Count= ({cuantity })=> {
 
     return (
 
@@ -9,3 +9,5 @@ export const Count= ({onAdd,cuantity })=> {
 
     )
 }
+
+
