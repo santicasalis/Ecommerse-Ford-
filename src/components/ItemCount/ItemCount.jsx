@@ -9,6 +9,8 @@ import "./itemCount.css"
 
 
 export const ItemCount = ({stock, inicio, onAdd}) => {
+  
+
 
     const [cuantity, setCuantity] = useState(inicio)
     const resta=()=> {
@@ -23,7 +25,7 @@ export const ItemCount = ({stock, inicio, onAdd}) => {
            setCuantity(cuantity + 1) 
         }
     }
-
+ 
    
   return (
 <div className='col-md-6 divs' >
@@ -35,13 +37,11 @@ export const ItemCount = ({stock, inicio, onAdd}) => {
         </div>
         
       <br/>
-
-    <Link to='/cart'> 
     
-      <button className="btn btn-primary"  type='submit' value={cuantity} onClick = {()=>onAdd(cuantity) }>
-       Añadir al carrito
-       </button> 
-   </Link> 
+      <button className="btn btn-primary"  onClick = {()=>onAdd(cuantity)}>
+       Añadir al carrito </button>
+         
+ 
     
    
     </div>
