@@ -3,40 +3,47 @@ import { useParams } from 'react-router-dom'
 import ItemList from "../ItemList/ItemList"
 import { getFetch } from "../../array/getFetch"
 import "./itemListContainer.css"
- 
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
-export const ItemListContainer = (  ) => {      
+export const ItemListContainer = () => {
     const [vehiculos, setVehiculos] = useState([])
-    
-
-    const {id} = useParams() 
-
+    const { id } = useParams()
     useEffect(() => {
+        const db = getFirestore()
         if (id) {
-            getFetch()  
-            .then(vehiculos=> setVehiculos(vehiculos.filter((vehiculo) => vehiculo.categoria === id)))
-            .catch((err)=> console.log(err))
-           
-                                      
+            const queryCollection = collection(db, "vehiculos")
+            const queryCollectionFilter = query(queryCollection, where("categoria", "==", id))
+            getDocs(queryCollectionFilter)
+                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: resp.id, ...vehiculo.data() }))))
+                .catch((err) => console.log(err))
         } else {
-            getFetch()  
-            .then(vehiculo=> setVehiculos(vehiculo))
-            .catch((err)=> console.log(err))
-           
-                            
+            const queryCollection = collection(db, "vehiculos")
+            getDocs(queryCollection)
+                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: resp.id, ...vehiculo.data() }))))
+                .catch((err) => console.log(err))
+
+
         }
-                  }, [id])
+    }, [id])
+
+
+
+
+
+
+
+
 
     return (
         <div>
-           
-            { 
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-                    <ItemList vehiculos={vehiculos} /> 
+
+            {
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                    <ItemList vehiculos={vehiculos} />
                 </div>
             }
 
-          
+
         </div>
 
     )

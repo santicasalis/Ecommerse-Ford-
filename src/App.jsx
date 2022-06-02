@@ -9,59 +9,46 @@ import { Footer } from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/Container/ItemDetailContainer';
-import {Cart} from './components/Cart/Cart'
-import { Carousels } from './components/Carousel/Carousels';
+import { Cart } from './components/Cart/Cart';
 import { CartContextProvider } from './context/CartContex';
-
-
-
-
-
-
-
-
 function App() {
-  
+
 
   return (
-  <BrowserRouter>
-  
-  <CartContextProvider>
-    <div className='App'>
+    <BrowserRouter>
 
-        <header >
-           <NavBar/>
-        </header>
-       
-      <main>
-    
-      <Routes>
-        
-       <Route  path="/"  element={<ItemListContainer/>}   />
-       <Route path="/categoria/:id" element={<ItemListContainer/>}/>
-       <Route  path="/detalle/:detalleId"  element={ <ItemDetailContainer/>}   />
-       <Route  path="/cart" element={ <Cart/>} />
+      <CartContextProvider>
+        <div className='App'>
 
-        
-  
-  
-       <Route  path="/*"  element={ <Navigate to= '/' />}   /> 
+          <header >
+            <NavBar />
+          </header>
 
-       </Routes>
-       </main>
-       <footer>
-          <Footer/>
-        </footer>
-    </div>
-    </CartContextProvider>
-  
-  </BrowserRouter>
-  
+          <main>
+
+            <Routes>
+
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/categoria/:id" element={<ItemListContainer />} />
+              <Route path="/detalle/:detalleId" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<Cart />} />
+
+
+
+
+              <Route path="/*" element={<Navigate to='/' />} />
+
+            </Routes>
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </CartContextProvider>
+
+    </BrowserRouter>
+
   )
 }
 
 export default App
-/* <button type="button" onClick={() => setCount((count) => count + 1)}>
-count is: {count}
-</button>
-*/

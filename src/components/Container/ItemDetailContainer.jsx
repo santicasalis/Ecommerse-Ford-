@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getFetch } from '../../array/getFetch'
-import { ItemCount } from '../ItemCount/ItemCount'
-import {  ItemDetail } from '../ItemDetail/ItemDetail'
-
-import { OpcionesButton } from '../OpcionesButton/OpcionesButton'
+import { ItemDetail } from '../ItemDetail/ItemDetail'
 import "./itemDetailContainer.css"
 
 
 export const ItemDetailContainer = () => {
-    const [vehiculo, setvehiculo] = useState({})
+    const [vehiculo, setVehiculo] = useState({})
     const { detalleId } = useParams()
 
+
+
     useEffect(() => {
-        getFetch(detalleId)   
-        .then(respuesta=> setvehiculo(respuesta))
-        .catch((err)=> console.log(err))
-          
+        const db = getFirestore()
+        const dbQuery = doc(db, 'vehiculos', detalleId)
+        getDoc(dbQuery)
+            .then(resp => setVehiculo({ id: resp.id, ...resp.data() }))
+            .catch(err => console.log(err))
+
     }, [])
-    
-  
     return (
         <div >
-            <ItemDetail vehiculo={vehiculo}  />
-         { //  <ItemCount inicio={1} stock={vehiculo.stock} onAdd={onAdd} />
-         }
-            
-           
+            <ItemDetail vehiculo={vehiculo} />
+
         </div>
     )
 }
