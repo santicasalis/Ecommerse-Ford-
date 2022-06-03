@@ -4,6 +4,7 @@ import { Item } from "../Item/Item"
 
 
 const ItemList = ({ vehiculos }) => {
+  console.log(vehiculos);
   return (
     vehiculos.map((vehiculo) => <Item key={vehiculo.id} vehiculo={vehiculo} />)
   )

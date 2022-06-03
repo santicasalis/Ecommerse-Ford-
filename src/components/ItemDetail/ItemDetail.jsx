@@ -8,9 +8,6 @@ import { ItemCount } from "../ItemCount/ItemCount"
 
 import "./itemDetail.css"
 
-
-
-
 export const ItemDetail = ({ vehiculo }) => {
   const [ItemCountPush, setItemCountPush] = useState(true)
   const { addToCart, cartList } = useCartContext()
@@ -22,11 +19,7 @@ export const ItemDetail = ({ vehiculo }) => {
     setItemCountPush(false)
   }
 
-
-
-
   return (
-
 
 
     <div className='col-md-6 divs'>

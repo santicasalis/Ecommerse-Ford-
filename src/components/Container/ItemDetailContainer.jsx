@@ -13,7 +13,7 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         const db = getFirestore()
-        const dbQuery = doc(db, 'vehiculos', detalleId)
+        const dbQuery = doc(db, "vehiculos", detalleId)
         getDoc(dbQuery)
             .then(resp => setVehiculo({ id: resp.id, ...resp.data() }))
             .catch(err => console.log(err))
