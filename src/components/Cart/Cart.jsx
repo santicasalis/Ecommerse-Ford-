@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { Table } from "react-bootstrap"
 import { Link, NavLink } from "react-router-dom"
 import { useCartContext } from "../../context/CartContex"
@@ -5,7 +6,24 @@ import "./cart.css"
 
 export const Cart = () => {
   const { cartList, vaciarCarrito, removerItem, precioTotal} = useCartContext()
+ function generarOrden(){
+  let ordenDeCompra= {}
+  ordenDeCompra.comprador={nombre:"Santiago", telefono:"1153492473", corre:"santicasalis@gmail.com"}
+  ordenDeCompra.total= precioTotal()
+  ordenDeCompra.items=cartList.map(vehiculo=>{
+    const id=vehiculo.id
+    const nombre=vehiculo.producto
+    const precio= vehiculo.precio * vehiculo.cuantity    
+    return {id,nombre,precio}
 
+  })
+  const db = getFirestore()
+  const queryCollection=collection (db,"ordenes")
+  addDoc(queryCollection, ordenDeCompra)
+  .then(resp=>console.log(resp))
+  .catch(err=>console.log(err))
+  .finally(()=>vaciarCarrito())
+}
   return (
  <div className="col-md-12">
     {cartList.length===0? 
@@ -49,7 +67,7 @@ export const Cart = () => {
 </Table>
 </div>
 <Link to='/'>
-<button className="btn btn-primary" onClick={vaciarCarrito}> Finalizar Compra</button>
+<button className="btn btn-primary" onClick={generarOrden}> Finalizar Compra</button>
 </Link>
 <button className="btn btn-primary" onClick={vaciarCarrito}> Vaciar carrito</button>
 </>

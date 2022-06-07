@@ -14,7 +14,7 @@ export const ItemListContainer = () => {
             const queryCollection = collection(db, "vehiculos")
             const queryCollectionFilter = query(queryCollection, where("categoria", "==", id))
             getDocs(queryCollectionFilter)
-                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: vehiculo.id, ...vehiculo.data() }))))
+                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: vehiculoid, ...vehiculo.data() }))))
                 .catch((err) => console.log(err))
         } else {
             const queryCollection = collection(db, "vehiculos")
