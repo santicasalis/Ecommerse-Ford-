@@ -1,15 +1,22 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { useState } from "react"
 import { Table } from "react-bootstrap"
 import { Link, NavLink } from "react-router-dom"
 import { useCartContext } from "../../context/CartContex"
 import "./cart.css"
 
 export const Cart = () => {
-  const { cartList, vaciarCarrito, removerItem, precioTotal } = useCartContext()
-  function generarOrden() {
+  
+ const [dataFormulario, setDataFormulario]= useState({email:"", telefono:"", nombre:""})
+ const { cartList, vaciarCarrito, removerItem, precioTotal } = useCartContext()
+    
+ function generarOrden(e) {
+     e.preventDefault()
     let ordenDeCompra = {}
-    ordenDeCompra.comprador = { nombre: "Santiago", telefono: "1153492473", corre: "santicasalis@gmail.com" }
+   
+    ordenDeCompra.comprador=dataFormulario
     ordenDeCompra.total = precioTotal()
+    
     ordenDeCompra.items = cartList.map(vehiculo => {
       const id = vehiculo.id
       const nombre = vehiculo.producto
@@ -24,6 +31,14 @@ export const Cart = () => {
       .catch(err => console.log(err))
       .finally(() => vaciarCarrito())
   }
+
+  const handlerChange = (e) => {
+    setDataFormulario({
+        ...dataFormulario,
+        [e.target.nombre]: e.target.value
+    })
+}
+
   return (
     <div className="col-md-12">
       {cartList.length === 0 ?
@@ -66,12 +81,57 @@ export const Cart = () => {
 
             </Table>
           </div>
-          <Link to='/'>
-            <button className="btn btn-primary" onClick={generarOrden}> Finalizar Compra</button>
-          </Link>
+         
           <button className="btn btn-primary" onClick={vaciarCarrito}> Vaciar carrito</button>
         </>
       }
+       { cartList.length !== 0 &&
+              
+                    <form 
+                        className='form-control w-50 mt-5'
+                        onSubmit={generarOrden}  >
+                                    
+                        <input 
+                            className='form-control'
+                            type='text' 
+                            name='nombre' 
+                            placeholder='Ingrese el nombre' 
+                            value={dataFormulario.nombre}
+                            onChange={handlerChange}
+                        /><br />
+                        <input 
+                            className='form-control'
+                            type='text' 
+                            name='telefono'
+                            placeholder='Ingrese el telefono' 
+                            value={dataFormulario.telefono}
+                            onChange={handlerChange}
+                        /><br/>
+                        <input 
+                            className='form-control'
+                            type='email' 
+                            name='email'
+                            placeholder='Ingrese el email' 
+                            value={dataFormulario.email}
+                            onChange={handlerChange}
+                        /><br/>
+                        <input 
+                            className='form-control'
+                            type='email' 
+                            name='email1'
+                            placeholder='repita email' 
+                            value={dataFormulario.email}
+                            onChange={handlerChange}
+                        /><br/>
+                        
+                        
+            <button className="btn btn-primary" onClick={generarOrden}> Finalizar Compra</button>
+          
+                    </form>
+                
+
+            }
+
     </div>
 
   )
