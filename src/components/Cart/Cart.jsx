@@ -1,4 +1,5 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore"
+
 import { useState } from "react"
 import { Table } from "react-bootstrap"
 import { Link, NavLink } from "react-router-dom"
@@ -7,10 +8,10 @@ import "./cart.css"
 
 export const Cart = () => {
   
- const [dataFormulario, setDataFormulario]= useState({email:"", telefono:"", nombre:""})
+ const [dataFormulario, setDataFormulario]= useState({email: "", telefono: "",  nombre: ""})
  const { cartList, vaciarCarrito, removerItem, precioTotal } = useCartContext()
     
- function generarOrden(e) {
+ async function generarOrden(e) {
      e.preventDefault()
     let ordenDeCompra = {}
    
@@ -20,8 +21,10 @@ export const Cart = () => {
     ordenDeCompra.items = cartList.map(vehiculo => {
       const id = vehiculo.id
       const nombre = vehiculo.producto
-      const precio = vehiculo.precio 
-      return { id, nombre, precio }
+      const precio = vehiculo.precio
+      const cantidad=vehiculo.cantidad 
+      const dia= new Date()
+      return { id, nombre, precio, cantidad, dia }
 
     })
     const db = getFirestore()
@@ -30,12 +33,35 @@ export const Cart = () => {
       .then(resp => console.log(resp))
       .catch(err => console.log(err))
       .finally(() => vaciarCarrito())
+      
+      
+      const queryCollectionStock = collection(db, 'vehiculos')
+
+      const queryActulizarStock =  query(
+          queryCollectionStock,                    
+          where( documentId() , 'in', cartList.map(vehiculo => vehiculo.id) )         
+      )
+
+     const batch = writeBatch(db)
+
+     await  getDocs(queryActulizarStock)
+      .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+            stock: res.data().stock - cartList.find(vehiculo => vehiculo.id === res.id).cantidad
+      }) ))
+      .finally(()=> alert('Compra realizada'))
+
+      batch.commit()
+
+
   }
+
+
+
 
   const handlerChange = (e) => {
     setDataFormulario({
         ...dataFormulario,
-        [e.target.nombre]: e.target.value
+        [e.target.name]: e.target.value
     })
 }
 
@@ -88,7 +114,7 @@ export const Cart = () => {
        { cartList.length !== 0 &&
               
                     <form 
-                        className='form-control w-50 mt-5'
+                        className='form-control '
                         onSubmit={generarOrden}  >
                                     
                         <input 
@@ -97,6 +123,7 @@ export const Cart = () => {
                             name='nombre' 
                             placeholder='Ingrese el nombre' 
                             value={dataFormulario.nombre}
+                            
                             onChange={handlerChange}
                         /><br />
                         <input 
