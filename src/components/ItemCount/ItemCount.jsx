@@ -1,10 +1,5 @@
-
-import { loadIcons } from '@iconify/react'
 import React, { useState } from 'react'
-import { Link} from 'react-router-dom'
-import { useCartContext } from '../../context/CartContex'
-import { InputCount } from '../InputCount/InputCount'
-import { OpcionesButton } from '../OpcionesButton/OpcionesButton'
+
 import "./itemCount.css"
 
 

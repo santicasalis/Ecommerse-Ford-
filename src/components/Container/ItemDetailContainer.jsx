@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
 
     }, [])
     return (
-        <div >
+        <div className='espacio'>
             <ItemDetail vehiculo={vehiculo} />
 
         </div>

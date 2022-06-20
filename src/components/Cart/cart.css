@@ -3,6 +3,8 @@
 }
 
 .tabla{
-    margin:7rem  auto
-    
+    margin-top: 7rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 1rem;
 }

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import {  useState } from "react"
 import { Card } from "react-bootstrap"
 import { ListGroup } from "react-bootstrap"
 import { ListGroupItem } from "react-bootstrap"
@@ -22,8 +22,8 @@ export const ItemDetail = ({ vehiculo }) => {
   return (
 
 
-    <div className='col-md-6 divs'>
-
+    <div >
+ <div className='col-md-6 '>
       <img src={vehiculo.imagen} />
 
       <Card.Subtitle className="mb-2 text-muted">
@@ -34,11 +34,11 @@ export const ItemDetail = ({ vehiculo }) => {
         <ListGroupItem>Precio:US${vehiculo.precio}</ListGroupItem>
         <ListGroupItem>Stock disponible: {vehiculo.stock}</ListGroupItem>
 
+      
+    
       </ListGroup>
-
-
-      <div className='col-md-12'>
-
+      </div>
+        <div>
         {ItemCountPush ?
           <ItemCount inicio={1} stock={vehiculo.stock} onAdd={onAdd} />
           :
@@ -50,8 +50,9 @@ export const ItemDetail = ({ vehiculo }) => {
               <button className="btn btn-primary">Ir al carrito</button>
             </Link>
           </>
-        }
-      </div>
+        }</div>
+      
+      
     </div>
   )
 }

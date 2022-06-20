@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import "./item.css"
 
 export const Item = ({ vehiculo }) => {
-  console.log(vehiculo);
+ 
   return (
 
     <div className='col-md-3 itemVehiculo'>
