@@ -1,7 +1,9 @@
 
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore"
 import React, { useState } from 'react'
-import Swal from "sweetalert2"
+import { Link } from "react-router-dom"
+import Swal from "sweetalert"
+
 import { useCartContext } from "../../context/CartContex"
 
 export function Formulario() {
@@ -39,20 +41,21 @@ export function Formulario() {
          )
    
         const batch = writeBatch(db)
-   
+       
         await  getDocs(queryActulizarStock)
          .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
                stock: res.data().stock - cartList.find(vehiculo => vehiculo.id === res.id).cantidad
          }) ))
-         .finally(()=> Swal.fire({
-           position: "center",
-           icon: 'success',
-           title: 'Se realizó correctamente la compra',
-           text:'su código es:{$id}',
-           showConfirmButton: true,
+         .finally(()=> Swal({
+            title:"Su compra se realizó con éxito",
+            icon: "success",
+            text:'su código es ${id}',
+            showConfirmButton: true,
+
+          })
           
            
-         }))
+         )
    
          batch.commit()
    
@@ -74,47 +77,57 @@ export function Formulario() {
     
               
     <form 
-        className='form-control '
+        
         onSubmit={generarOrden}  >
                     
-        <input 
+        <input required
             className='form-control'
             type='text' 
+            
             name='nombre' 
             placeholder='Ingrese el nombre' 
             value={dataFormulario.nombre}
-            
             onChange={handlerChange}
+           
         /><br />
         <input 
+        
+            required
             className='form-control'
             type='text' 
             name='telefono'
             placeholder='Ingrese el telefono' 
             value={dataFormulario.telefono}
             onChange={handlerChange}
+            
         /><br/>
         <input 
             className='form-control'
             type='email' 
+            required
             name='email'
             placeholder='Ingrese el email' 
             value={dataFormulario.email}
             onChange={handlerChange}
+            
         /><br/>
         <input 
             className='form-control'
             type='email' 
+            required
             name='email1'
             placeholder='repita email' 
             value={dataFormulario.email}
             onChange={handlerChange}
+            
         /><br/>
         
         
-<button className="btn btn-primary" onClick={generarOrden}> Finalizar Compra</button>
+<button type="submit" className="btn btn-primary" onClick={generarOrden}> Finalizar Compra</button>
 
     </form>
+   
+    
   )
 }
 
