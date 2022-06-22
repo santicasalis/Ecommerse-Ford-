@@ -5,6 +5,8 @@ import Swal from "sweetalert"
 
 import { useCartContext } from "../../context/CartContex"
 
+import "./formulario.css"
+
 export function Formulario() {
     const [dataFormulario, setDataFormulario] = useState({ email: "", telefono: "", nombre: "" })
     const { cartList, vaciarCarrito, precioTotal } = useCartContext()
@@ -48,7 +50,7 @@ export function Formulario() {
             .finally(() => Swal({
                 title: "Su compra se realizó con éxito",
                 icon: "success",
-                text:'su código es fgrkvhvtjrrvbmkdx58',
+                text:'su código es griudnsafg45gsadg',
                 showConfirmButton: true,
 
             })
@@ -75,14 +77,14 @@ export function Formulario() {
     return (
 
 
-        <form
+        <form className="col-md-8 "
 
             onSubmit={generarOrden}  >
-
-            <input required
+            <h5>Ingrese sus datos </h5>
+            <input 
                 className='form-control'
                 type='text'
-
+                required
                 name='nombre'
                 placeholder='Ingrese el nombre'
                 value={dataFormulario.nombre}

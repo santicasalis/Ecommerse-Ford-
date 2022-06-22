@@ -8,14 +8,14 @@ export const ItemCount = ({ stock, inicio, onAdd }) => {
 
 
   const [cuantity, setCuantity] = useState(inicio)
-  const resta = () => {
+  const rest = () => {
 
     if (cuantity > 1) {
       setCuantity(cuantity - 1)
     }
   }
 
-  const suma = () => {
+  const addition = () => {
     if (cuantity < stock) {
       setCuantity(cuantity + 1)
     }
@@ -26,9 +26,9 @@ export const ItemCount = ({ stock, inicio, onAdd }) => {
     <div className=' divs' >
 
       <div >
-        <button className="btn btn-primary botones" type='button' onClick={resta}>-</button>
+        <button className="btn btn-primary botones" type='button' onClick={rest}>-</button>
         <h5 className='botones'>{cuantity}</h5>
-        <button className="btn btn-primary botones" type='button' onClick={suma}>+</button>
+        <button className="btn btn-primary botones" type='button' onClick={addition}>+</button>
       </div>
 
       <br />

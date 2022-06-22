@@ -9,27 +9,22 @@ import { Load } from "../../Spinner/Spinner"
 
 
 export const ItemListContainer = () => {
-    const [vehiculos, setVehiculos] = useState([])
+    const [cars, setCars] = useState([])
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
-    
+
     useEffect(() => {
         const db = getFirestore()
-        if (id) {
-            const queryCollection = collection(db, "vehiculos")
-            const queryCollectionFilter = query(queryCollection, where("categoria", "==", id))
-            getDocs(queryCollectionFilter)
-                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: vehiculo.id, ...vehiculo.data() }))))
-                .catch((err) => console.log(err))
-                .finally(()=>setLoading(false)) 
-        } else {
-            const queryCollection = collection(db, "vehiculos")
-            getDocs(queryCollection)
-                .then(resp => setVehiculos(resp.docs.map(vehiculo => ({ id: vehiculo.id, ...vehiculo.data() }))))
-                .catch((err) => console.log(err))
-                .finally(()=>setLoading(false))  
 
-        }
+        const queryCollection = collection(db, "vehiculos")
+        const queryCollectionFilter = id ? query(queryCollection, where("categoria", "==", id)) :
+            queryCollection
+        getDocs(queryCollectionFilter)
+            .then(resp => setCars(resp.docs.map(car => ({ id: car.id, ...car.data() }))))
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false))
+
+
     }, [id])
 
     return (
@@ -37,11 +32,11 @@ export const ItemListContainer = () => {
 
             {
                 loading ?
-                <Load/>
-                :
-                <div className="espacio" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <ItemList vehiculos={vehiculos} />
-                </div>
+                    <Load />
+                    :
+                    <div className="space" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                        <ItemList cars={cars} />
+                    </div>
             }
 
 

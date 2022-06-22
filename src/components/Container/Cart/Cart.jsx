@@ -28,7 +28,7 @@ export const Cart = () => {
 
         :
         <>
-          <div className="col-md-8 tabla">
+          <div className="col-md-8 tables">
             <Table responsive bordered hover>
               <thead>
                 <tr>
@@ -39,13 +39,13 @@ export const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cartList.map(vehiculo =>
+                {cartList.map(car =>
 
-                  <tr key={vehiculo.id}>
-                    <td ><img src={vehiculo.imagenCart} className="imagen"></img> {vehiculo.producto} </td>
-                    <td className="texto">{vehiculo.cantidad}</td>
-                    <td>{vehiculo.precio}</td>
-                    <td>  <button className="btn btn-danger" onClick={() => removerItem(vehiculo.id)}>X</button>  </td>
+                  <tr key={car.id}>
+                    <td ><img src={car.imagenCart} className="image"></img> {car.producto} </td>
+                    <td className="texto">{car.cantidad}</td>
+                    <td>{car.precio}</td>
+                    <td>  <button className="btn btn-danger" onClick={() => removerItem(car.id)}>X</button>  </td>
                   </tr>
 
                 )

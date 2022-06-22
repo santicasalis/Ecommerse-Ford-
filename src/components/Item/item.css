@@ -1,16 +1,16 @@
-.itemVehiculo{
+.itemCar{
     padding-right: 2rem;
     padding-top: 2rem;
     padding-left: 2rem;
    
 }
 
-.carta:hover{
+.cart:hover{
     transform: scale(1.1);
     border: 3px solid;
     
 }
 
-.decoracion{
+.decoration{
     text-decoration: none;
 }

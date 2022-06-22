@@ -5,23 +5,23 @@ import { Link } from "react-router-dom"
 
 import "./item.css"
 
-export const Item = ({ vehiculo }) => {
+export const Item = ({ car }) => {
 
   return (
 
-    <div className='col-md-3 itemVehiculo'>
+    <div className='col-md-3 itemCar'>
 
-      <Card className="mt-2 carta" border="primary" >
+      <Card className="mt-2 cart" border="primary" >
 
-        <Link to={`/detalle/${vehiculo.id}`} className="decoracion">
-          <Card.Img variant="top" src={vehiculo.imagen} />
+        <Link to={`/detalle/${car.id}`} className="decoration">
+          <Card.Img variant="top" src={car.imagen} />
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">
-              {vehiculo.descripcion}
+              {car.descripcion}
             </Card.Subtitle>
           </Card.Body>
           <ListGroup className="list-group-flush ">
-            <ListGroupItem >Precio:US${vehiculo.precio}</ListGroupItem>
+            <ListGroupItem >Precio:US${car.precio}</ListGroupItem>
 
           </ListGroup>
         </Link>

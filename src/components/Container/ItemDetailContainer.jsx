@@ -8,7 +8,7 @@ import "./itemDetailContainer.css"
 
 
 export const ItemDetailContainer = () => {
-    const [vehiculo, setVehiculo] = useState({})
+    const [car, setCar] = useState({})
     const [loading, setLoading] = useState(true)
     const { detalleId } = useParams()
 
@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
         const db = getFirestore()
         const dbQuery = doc(db, "vehiculos", detalleId)
         getDoc(dbQuery)
-            .then(resp => setVehiculo({ id: resp.id, ...resp.data() }))
+            .then(resp => setCar({ id: resp.id, ...resp.data() }))
             .catch(err => console.log(err))
             .finally(()=>setLoading(false)) 
 
@@ -31,7 +31,7 @@ export const ItemDetailContainer = () => {
         <Load/>
         :
         <div className='espacio'>
-            <ItemDetail vehiculo={vehiculo} />
+            <ItemDetail car={car} />
 
         </div>
     }

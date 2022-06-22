@@ -1,11 +1,6 @@
 import { Carousel } from "react-bootstrap"
 
-
-
 import "./carousels.css"
-
-
-
 
 export const Carousels = () => {
   return (
