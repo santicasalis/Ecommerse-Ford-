@@ -1,8 +1,5 @@
 import { Item } from "../Item/Item"
 
-
-
-
 const ItemList = ({ vehiculos }) => {
  
   return (

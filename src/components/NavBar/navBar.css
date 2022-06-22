@@ -5,6 +5,19 @@
    color: aliceblue;
    margin-right: 2rem;
    text-decoration: none;
-   height: 10vh;
-   line-height:350%
+   height: 8vh;
+   
+}
+
+.fuente{
+   font-family:'Arial', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color: aliceblue;
+   font-weight: bold;
+}
+
+.categorias{
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 2rem;
+   
 }

@@ -2,11 +2,14 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { Load } from '../Spinner/Spinner'
+
 import "./itemDetailContainer.css"
 
 
 export const ItemDetailContainer = () => {
     const [vehiculo, setVehiculo] = useState({})
+    const [loading, setLoading] = useState(true)
     const { detalleId } = useParams()
 
 
@@ -17,13 +20,23 @@ export const ItemDetailContainer = () => {
         getDoc(dbQuery)
             .then(resp => setVehiculo({ id: resp.id, ...resp.data() }))
             .catch(err => console.log(err))
+            .finally(()=>setLoading(false)) 
 
     }, [])
     return (
+  <div>
+        {
+           
+        loading? 
+        <Load/>
+        :
         <div className='espacio'>
             <ItemDetail vehiculo={vehiculo} />
 
         </div>
+    }
+    
+    </div>
     )
 }
 
