@@ -3,7 +3,7 @@
 
 
 
-Este proyecto lo comencé a realizar durante el curso de CoderHouse . El mismo consiste en un Ecommerse de vehiculos de la marca Ford. 
+Este proyecto lo comencé a realizar durante el curso de CoderHouse . El mismo consiste en un Ecommerse de vehiculos de la marca Ford. Utilizando React y firebase como base de datos
 
 ![imagen](/Captura%20de%20pantalla%202022-06-22%20125533.png)
 ### Link
