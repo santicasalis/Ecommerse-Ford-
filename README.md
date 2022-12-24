@@ -8,7 +8,7 @@ Este proyecto lo comencé a realizar durante el curso de CoderHouse . El mismo c
 ![imagen](/Captura%20de%20pantalla%202022-06-22%20125533.png)
 ### Link
 
-[Ecommerse Ford](www.ford.com.ar)
+[Ecommerse Ford](https://fordecommerce.netlify.app/)
 
 ### Navegación del sito
 [Video](https://youtu.be/GPSbyYpHthg)
